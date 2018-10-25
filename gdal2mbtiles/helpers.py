@@ -24,7 +24,7 @@ from functools import partial
 from tempfile import NamedTemporaryFile
 
 from .gdal import Dataset, preprocess
-from .renderers import PngRenderer
+from .renderers import PngRenderer, JpegRenderer
 from .storages import MbtilesStorage, NestedFileStorage, SimpleFileStorage
 from .vips import TmsPyramid, validate_resolutions
 
@@ -57,7 +57,7 @@ def image_mbtiles(inputfile, outputfile, metadata,
         pngdata = dict()
 
     if renderer is None:
-        renderer = PngRenderer(**pngdata)
+        renderer = JpegRenderer()
 
     with MbtilesStorage.create(filename=outputfile,
                                metadata=metadata,

@@ -154,9 +154,9 @@ def parse_args(args):
     group.add_argument('--version', default='1.0.0',
                        help='Version of the tileset. Defaults to "1.0.0"')
     group.add_argument('--format',
-                       default=LatestMetadata.FORMATS.PNG,
+                       default=LatestMetadata.FORMATS.JPG,
                        choices=LatestMetadata.FORMATS,
-                       help='Tile image format. Defaults to "png"')
+                       help='Tile image format. Defaults to "JPG"')
 
     group = parser.add_argument_group(title='GDAL warp arguments')
     group.add_argument('--spatial-reference', type=int, default=3857,
